@@ -1,0 +1,365 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* CSS Custom Properties for Earth-Tone Colors */
+    --color-earth-50: 250 248 245;
+    --color-earth-100: 245 241 234;
+    --color-earth-200: 232 223 208;
+    --color-earth-300: 219 201 176;
+    --color-earth-400: 201 173 138;
+    --color-earth-500: 184 146 106;
+    --color-earth-600: 160 120 85;
+    --color-earth-700: 133 97 71;
+    --color-earth-800: 109 80 61;
+    --color-earth-900: 90 67 53;
+    --color-earth-950: 48 35 27;
+
+    --color-sand-50: 250 249 247;
+    --color-sand-100: 245 242 237;
+    --color-sand-200: 233 227 216;
+    --color-sand-300: 221 208 189;
+    --color-sand-400: 202 184 154;
+    --color-sand-500: 184 160 122;
+    --color-sand-600: 163 136 98;
+    --color-sand-700: 136 113 82;
+    --color-sand-800: 111 93 70;
+    --color-sand-900: 92 77 59;
+    --color-sand-950: 49 40 31;
+
+    --color-moss-50: 246 247 244;
+    --color-moss-100: 227 230 223;
+    --color-moss-200: 199 205 192;
+    --color-moss-300: 165 174 153;
+    --color-moss-400: 132 143 117;
+    --color-moss-500: 106 118 89;
+    --color-moss-600: 83 93 70;
+    --color-moss-700: 66 74 57;
+    --color-moss-800: 55 61 48;
+    --color-moss-900: 47 52 41;
+    --color-moss-950: 24 28 21;
+
+    --color-clay-50: 248 245 243;
+    --color-clay-100: 237 231 226;
+    --color-clay-200: 220 207 197;
+    --color-clay-300: 197 176 160;
+    --color-clay-400: 176 146 125;
+    --color-clay-500: 160 125 102;
+    --color-clay-600: 147 109 90;
+    --color-clay-700: 122 89 76;
+    --color-clay-800: 101 75 65;
+    --color-clay-900: 83 63 54;
+    --color-clay-950: 44 32 27;
+
+    --color-stone-50: 247 247 246;
+    --color-stone-100: 228 228 226;
+    --color-stone-200: 201 201 197;
+    --color-stone-300: 167 167 161;
+    --color-stone-400: 136 136 127;
+    --color-stone-500: 111 111 103;
+    --color-stone-600: 90 90 83;
+    --color-stone-700: 74 74 68;
+    --color-stone-800: 62 62 58;
+    --color-stone-900: 54 54 50;
+    --color-stone-950: 29 29 27;
+
+    /* Typography Scale */
+    --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    --font-size-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+    --font-size-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+    --font-size-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+    --font-size-2xl: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
+    --font-size-3xl: clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem);
+    --font-size-4xl: clamp(2.25rem, 1.9rem + 1.75vw, 3rem);
+
+    /* Spacing Scale */
+    --space-xs: max(0.25rem, 1vw);
+    --space-sm: max(0.5rem, 2vw);
+    --space-md: max(1rem, 3vw);
+    --space-lg: max(1.5rem, 4vw);
+    --space-xl: max(2rem, 5vw);
+    --space-2xl: max(3rem, 6vw);
+    --space-3xl: max(4rem, 8vw);
+
+    /* Dynamic Viewport Units */
+    --vh: 1vh;
+    --dvh: 1dvh;
+    --svh: 1svh;
+    --lvh: 1lvh;
+  }
+
+  /* Dark Mode Support */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-earth-50: 48 35 27;
+      --color-earth-900: 250 248 245;
+      --color-sand-50: 49 40 31;
+      --color-sand-900: 250 249 247;
+      --color-moss-50: 24 28 21;
+      --color-moss-900: 246 247 244;
+      --color-clay-50: 44 32 27;
+      --color-clay-900: 248 245 243;
+      --color-stone-50: 29 29 27;
+      --color-stone-900: 247 247 246;
+    }
+  }
+
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    :root {
+      --color-earth-500: 160 120 85;
+      --color-sand-500: 163 136 98;
+      --color-moss-500: 83 93 70;
+      --color-clay-500: 147 109 90;
+      --color-stone-500: 90 90 83;
+    }
+  }
+
+  /* Base Typography */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: rgb(var(--color-stone-900));
+    background-color: rgb(var(--color-earth-50));
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  }
+
+  /* Headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: Georgia, Cambria, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    line-height: 1.2;
+    color: rgb(var(--color-earth-900));
+    margin-bottom: 0.75em;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: var(--font-size-4xl);
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: var(--font-size-3xl);
+    letter-spacing: -0.015em;
+  }
+
+  h3 {
+    font-size: var(--font-size-2xl);
+    letter-spacing: -0.01em;
+  }
+
+  h4 {
+    font-size: var(--font-size-xl);
+  }
+
+  h5 {
+    font-size: var(--font-size-lg);
+  }
+
+  h6 {
+    font-size: var(--font-size-base);
+  }
+
+  /* Paragraphs */
+  p {
+    margin-bottom: 1em;
+    max-width: 65ch;
+  }
+
+  /* Links */
+  a {
+    color: rgb(var(--color-earth-600));
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: rgb(var(--color-earth-700));
+    text-decoration: underline;
+  }
+
+  a:focus-visible {
+    outline: 2px solid rgb(var(--color-earth-500));
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Lists */
+  ul,
+  ol {
+    margin-bottom: 1em;
+    padding-left: 1.5em;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+
+  /* Code */
+  code,
+  pre {
+    font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-size: 0.9em;
+  }
+
+  code {
+    background-color: rgb(var(--color-sand-100));
+    padding: 0.125em 0.25em;
+    border-radius: 3px;
+  }
+
+  pre {
+    background-color: rgb(var(--color-sand-100));
+    padding: 1em;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-bottom: 1em;
+  }
+
+  pre code {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  /* Images */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Buttons */
+  button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    cursor: pointer;
+  }
+
+  /* Form Elements */
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  /* Focus Visible */
+  :focus-visible {
+    outline: 2px solid rgb(var(--color-earth-500));
+    outline-offset: 2px;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: rgb(var(--color-earth-200));
+    color: rgb(var(--color-earth-900));
+  }
+}
+
+@layer utilities {
+  /* Text Balance */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Screen Reader Only */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Skip Link */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: rgb(var(--color-earth-600));
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    z-index: 100;
+    border-radius: 0 0 4px 0;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a[href^='http']:after {
+    content: ' (' attr(href) ')';
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 2cm;
+  }
+}
