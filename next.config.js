@@ -17,6 +17,15 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['react', 'react-dom'],
+  },
+  swcMinify: true,
+  productionBrowserSourceMaps: false,
 };
 
 module.exports = nextConfig;
