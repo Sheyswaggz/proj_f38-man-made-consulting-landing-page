@@ -1,0 +1,46 @@
+# Robots.txt for Man Made Consulting Landing Page
+# Generated: 2024-12-15
+# Purpose: Control search engine crawling and provide sitemap reference
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# Disallow crawling of Next.js internal directories
+Disallow: /_next/
+Disallow: /api/
+
+# Disallow crawling of build artifacts and static generation files
+Disallow: /*.json$
+
+# Sitemap location
+Sitemap: https://manmadeconsulting.com/sitemap.xml
+
+# Crawl-delay for respectful crawling (optional, in seconds)
+# Crawl-delay: 1
+
+# Allow specific search engines with explicit rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block known bad bots and scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
