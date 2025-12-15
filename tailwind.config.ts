@@ -1,0 +1,141 @@
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        earth: {
+          50: '#faf8f5',
+          100: '#f5f1ea',
+          200: '#e8dfd0',
+          300: '#dbc9b0',
+          400: '#c9ad8a',
+          500: '#b8926a',
+          600: '#a07855',
+          700: '#856147',
+          800: '#6d503d',
+          900: '#5a4335',
+          950: '#30231b',
+        },
+        sand: {
+          50: '#faf9f7',
+          100: '#f5f2ed',
+          200: '#e9e3d8',
+          300: '#ddd0bd',
+          400: '#cab89a',
+          500: '#b8a07a',
+          600: '#a38862',
+          700: '#887152',
+          800: '#6f5d46',
+          900: '#5c4d3b',
+          950: '#31281f',
+        },
+        moss: {
+          50: '#f6f7f4',
+          100: '#e3e6df',
+          200: '#c7cdc0',
+          300: '#a5ae99',
+          400: '#848f75',
+          500: '#6a7659',
+          600: '#535d46',
+          700: '#424a39',
+          800: '#373d30',
+          900: '#2f3429',
+          950: '#181c15',
+        },
+        clay: {
+          50: '#f8f5f3',
+          100: '#ede7e2',
+          200: '#dccfc5',
+          300: '#c5b0a0',
+          400: '#b0927d',
+          500: '#a07d66',
+          600: '#936d5a',
+          700: '#7a594c',
+          800: '#654b41',
+          900: '#533f36',
+          950: '#2c201b',
+        },
+        stone: {
+          50: '#f7f7f6',
+          100: '#e4e4e2',
+          200: '#c9c9c5',
+          300: '#a7a7a1',
+          400: '#88887f',
+          500: '#6f6f67',
+          600: '#5a5a53',
+          700: '#4a4a44',
+          800: '#3e3e3a',
+          900: '#363632',
+          950: '#1d1d1b',
+        },
+      },
+      fontFamily: {
+        sans: [
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          'sans-serif',
+        ],
+        serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+        mono: [
+          'Menlo',
+          'Monaco',
+          'Consolas',
+          '"Liberation Mono"',
+          '"Courier New"',
+          'monospace',
+        ],
+      },
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+        '100': '25rem',
+        '112': '28rem',
+        '128': '32rem',
+      },
+      maxWidth: {
+        '8xl': '88rem',
+        '9xl': '96rem',
+      },
+      borderRadius: {
+        '4xl': '2rem',
+      },
+      boxShadow: {
+        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
+        'soft-lg': '0 10px 40px -10px rgba(0, 0, 0, 0.1), 0 20px 25px -5px rgba(0, 0, 0, 0.04)',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+        'slide-up': 'slideUp 0.5s ease-out',
+        'slide-down': 'slideDown 0.5s ease-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        slideDown: {
+          '0%': { transform: 'translateY(-20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;
